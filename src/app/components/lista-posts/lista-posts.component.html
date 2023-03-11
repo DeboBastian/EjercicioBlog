@@ -1,1 +1,19 @@
-<p>lista-posts works!</p>
+<button type="button" class="btn btn-success" (click)="onClick($event)" value="Viajes">Viajes</button>
+<button type="button" class="btn btn-warning" (click)="onClick($event)" value="Gastronomia">Gastronomia</button>
+<button type="button" class="btn btn-info" (click)="onClick($event)" value="Ocio">Ocio</button>
+<button type="button" class="btn btn-dark" (click)="onClick($event)" value="Todos">Todas las publicaciones</button>
+
+
+
+<div class="posts">
+    <div class="post" *ngFor="let post of posts; let indice = index">
+        <h3> {{post.titulo}}</h3>
+        <p> {{post.texto}} </p>
+        <h5> {{post.autor}} </h5>
+        <p class="fecha"> {{post.fecha}} </p>
+        <img [src]="post.imagen" alt="">
+
+        <button type="button" class="btn btn-danger" (click)="borrar(indice)">Borrar</button>
+
+    </div>
+</div>
