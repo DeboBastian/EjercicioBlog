@@ -1,1 +1,33 @@
-<p>formulario works!</p>
+<div>
+    <p>Formulario Valid: {{ formulario.valid }}</p>
+    <p>Nombre Valid: {{ formulario.get('nombre')?.valid }}</p>
+    <p>Edad Touched: {{ formulario.get('edad')?.touched }}</p>
+</div>
+
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+        <label class="form-label">Autor</label>
+        <input type="text" class="form-control" formControlName="autor">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Título de la publicacicon</label>
+        <input type="text" class="form-control" formControlName="titulo">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Descripcion</label>
+        <input type="text" class="form-control" formControlName="texto">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Fecha</label>
+        <input type="text" class="form-control" formControlName="fecha">
+    </div>
+
+    <select class="form-select" aria-label="Default select example">
+        <option selected>Open this select menu</option>
+        <option value="viajes">Viajes</option>
+        <option value="gastronomia">Gastronomia</option>
+        <option value="ocio">Ocio</option>
+    </select>
+    <input type="submit" value="Enviar" class="btn btn-info" [disabled]="!formulario.valid">
+</form>
