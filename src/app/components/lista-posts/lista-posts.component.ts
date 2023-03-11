@@ -21,9 +21,9 @@ export class ListaPostsComponent {
 
   
   ngOnInit() {
-    // this.activatedRoute.params.subscribe(data => {
+    this.activatedRoute.params.subscribe(data => {
        this.posts = this.postService.getAll()
-    // })
+     })
    
   }
 

@@ -9,10 +9,11 @@
     <div class="post" *ngFor="let post of posts; let indice = index">
         <h3> {{post.titulo}}</h3>
         <p> {{post.texto}} </p>
-        <h4> {{post.autor}} </h4>
+        <h5> {{post.autor}} </h5>
         <p class="fecha"> {{post.fecha}} </p>
         <img [src]="post.imagen" alt="">
 
         <button type="button" class="btn btn-danger" (click)="borrar(indice)">Borrar</button>
+
     </div>
 </div>
