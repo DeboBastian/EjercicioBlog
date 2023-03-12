@@ -65,7 +65,6 @@ export class PostsService {
         categoria: 'Ocio'
       }
     ]
-
   }
 
 
@@ -87,5 +86,7 @@ export class PostsService {
   delatePost(indice: number) {
     this.arrPosts.splice(indice, 1)
   }
+
+
 
 }

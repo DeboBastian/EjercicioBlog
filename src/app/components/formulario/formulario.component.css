@@ -1,0 +1,16 @@
+.btn.btn-info{
+    width: 100%;
+    margin-top: 30px;
+    font-weight: bolder;
+}
+
+.container{
+    height: 850px;
+    padding-top: 50px;
+}
+
+.btn.btn-secondary{
+    font-weight: bolder;
+    display: flex;
+    margin: 80px auto;
+}

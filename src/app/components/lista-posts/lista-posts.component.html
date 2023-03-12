@@ -1,8 +1,9 @@
-<button type="button" class="btn btn-success" (click)="onClick($event)" value="Viajes">Viajes</button>
-<button type="button" class="btn btn-warning" (click)="onClick($event)" value="Gastronomia">Gastronomia</button>
-<button type="button" class="btn btn-info" (click)="onClick($event)" value="Ocio">Ocio</button>
-<button type="button" class="btn btn-dark" (click)="onClick($event)" value="Todos">Todas las publicaciones</button>
-
+<div class="botones">
+    <button type="button" class="btn btn-success" (click)="onClick($event)" value="Viajes">Viajes</button>
+    <button type="button" class="btn btn-warning" (click)="onClick($event)" value="Gastronomia">Gastronomia</button>
+    <button type="button" class="btn btn-info" (click)="onClick($event)" value="Ocio">Ocio</button>
+    <button type="button" class="btn btn-dark" (click)="onClick($event)" value="Todos">Todas las publicaciones</button>
+</div>
 
 
 <div class="posts">
@@ -13,7 +14,12 @@
         <p class="fecha"> {{post.fecha}} </p>
         <img [src]="post.imagen" alt="">
 
-        <button type="button" class="btn btn-danger" (click)="borrar(indice)">Borrar</button>
+        <!-- <button type="button" class="btn btn-danger" (click)="borrar(indice)">Borrar</button> -->
 
     </div>
+</div>
+
+<div class="botones">
+    <button type="button" class="btn btn-secondary btn-lg btn-block" [routerLink]="['/blog/new']">Publica una
+        novedad</button>
 </div>
