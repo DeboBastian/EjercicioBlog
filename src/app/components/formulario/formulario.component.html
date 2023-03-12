@@ -1,33 +1,40 @@
-<div>
-    <p>Formulario Valid: {{ formulario.valid }}</p>
-    <p>Nombre Valid: {{ formulario.get('nombre')?.valid }}</p>
-    <p>Edad Touched: {{ formulario.get('edad')?.touched }}</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-8 offset-0 offset-lg-2">
+            <form [formGroup]="formulario" (ngSubmit)="crearPost()">
+
+                <div class="mb-3 form-group">
+                    <label class="form-label">Autor</label>
+                    <input type="text" class="form-control" formControlName="autor" name="autor">
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="form-label">Título de la publicacicon</label>
+                    <input type="text" class="form-control" formControlName="titulo" name="titulo">
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="form-label">Descripcion</label>
+                    <input type="text" class="form-control" formControlName="texto" name="texto">
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="form-label">Imagen</label>
+                    <input type="text" class="form-control" formControlName="imagen" name="imagen">
+                </div>
+
+                <div class="mb-3 form-group">
+                    <label class="form-label">Fecha</label>
+                    <input type="text" class="form-control" formControlName="fecha" name="fecha">
+                </div>
+
+                <select class="form-select form-group" aria-label="Default select example" formControlName="categoria"
+                    name="categoria">
+                    <option selected>Selecciona la categoria</option>
+                    <option value="viajes">Viajes</option>
+                    <option value="gastronomia">Gastronomia</option>
+                    <option value="ocio">Ocio</option>
+                </select>
+                <input type="submit" value="Publicar" class="btn btn-info">
+                [routerLink]="['/posts']">
+            </form>
+        </div>
+    </div>
 </div>
-
-<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-
-    <div class="mb-3">
-        <label class="form-label">Autor</label>
-        <input type="text" class="form-control" formControlName="autor">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Título de la publicacicon</label>
-        <input type="text" class="form-control" formControlName="titulo">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Descripcion</label>
-        <input type="text" class="form-control" formControlName="texto">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Fecha</label>
-        <input type="text" class="form-control" formControlName="fecha">
-    </div>
-
-    <select class="form-select" aria-label="Default select example">
-        <option selected>Open this select menu</option>
-        <option value="viajes">Viajes</option>
-        <option value="gastronomia">Gastronomia</option>
-        <option value="ocio">Ocio</option>
-    </select>
-    <input type="submit" value="Enviar" class="btn btn-info" [disabled]="!formulario.valid">
-</form>

@@ -1,5 +1,6 @@
 
 
+
 .posts {
     display: flex;
     flex-wrap: wrap;
@@ -14,10 +15,11 @@
     text-align: center;
     border: 2px solid rgba(128, 128, 128, 0.306);
     background-color: rgba(208, 248, 245, 0.263);
+    border-radius: 8px;
 }
 
 .post img{
-    width: 100%;
+    width:90%;
     background-size: cover;
 }
 
@@ -40,4 +42,15 @@ p.fecha{
 
 button{
     margin: 10px;
+}
+
+.botones{
+ text-align: center;
+ margin-top: 20px;
+ margin-bottom: 60px;
+}
+
+.btn.btn-secondary.btn-lg.btn-block{
+    margin-top:60px;
+    width: 90%;
 }

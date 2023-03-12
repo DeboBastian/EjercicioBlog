@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { PostsService } from 'src/app/services/posts.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'formulario',
@@ -10,20 +12,32 @@ export class FormularioComponent {
 
   formulario: FormGroup;
 
-  constructor() {
+  constructor(
+    private postService: PostsService,
+    private router: Router) {
+    
+    
     this.formulario = new FormGroup({
-      autor: new FormControl(),
-      titulo: new FormControl(),
-      texto: new FormControl(),
-      fecha: new FormControl(),
-      categoria: new FormControl()
-      
+      autor: new FormControl(null, [
+        Validators.required
+      ]),
+      titulo: new FormControl(null,
+        [Validators.minLength(4)]),
+      texto: new FormControl(null,
+        [Validators.maxLength(300)]),
+      imagen: new FormControl(null),
+      fecha: new FormControl(null),
+      categoria: new FormControl(null, [
+        Validators.required
+      ])
+
     })
   }
 
 
-  onSubmit() {
-    console.log(this.formulario.value)
+  crearPost() {
+    this.postService.createPost(this.formulario.value);
+    this.router.navigate(['/posts'])
   }
 
 }
