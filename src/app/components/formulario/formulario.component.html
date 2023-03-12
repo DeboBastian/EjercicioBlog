@@ -17,24 +17,37 @@
                 </div>
                 <div class="mb-3 form-group">
                     <label class="form-label">Imagen</label>
-                    <input type="text" class="form-control" formControlName="imagen" name="imagen">
+                    <input type="text" class="form-control" formControlName="imagen" name="imagen"
+                        placeholder="Introduzca la URL de la imagen">
                 </div>
 
                 <div class="mb-3 form-group">
                     <label class="form-label">Fecha</label>
-                    <input type="text" class="form-control" formControlName="fecha" name="fecha">
+                    <input type="text" class="form-control" formControlName="fecha" name="fecha"
+                        placeholder="DD / MM / YYYY">
                 </div>
 
-                <select class="form-select form-group" aria-label="Default select example" formControlName="categoria"
-                    name="categoria">
-                    <option selected>Selecciona la categoria</option>
-                    <option value="viajes">Viajes</option>
-                    <option value="gastronomia">Gastronomia</option>
-                    <option value="ocio">Ocio</option>
-                </select>
-                <input type="submit" value="Publicar" class="btn btn-info">
-                [routerLink]="['/posts']">
+                <!-- FALTA PONER BIEN EL CALENDARIO Y VER EL TEMA DE SELECCIONAR IMAGEN  -->
+
+                <div class="mb-3">
+                    <label class="form-label">Seleccione la categoria</label>
+                    <select class="form-select form-group" formControlName="categoria" name="categoria">
+                        <option value="viajes">Viajes</option>
+                        <option value="gastronomia">Gastronomia</option>
+                        <option value="ocio">Ocio</option>
+                    </select>
+                </div>
+
+                <!-- //PREGUNTAR PORQUE EN EL SELECT NO SE PUEDE ESCRIBIR PLACEHOLDER CUANDO HAY formControlName
+                //Como insertar el calendario para la fecha -->
+
+                <input type="submit" value="PUBLICAR" class="btn btn-info" [disabled]="!formulario.valid">
+
             </form>
+            <div>
+                <button [routerLink]="['/posts']" class="btn btn-secondary">
+                    VER TODAS LAS PUBLICACIONES</button>
+            </div>
         </div>
     </div>
 </div>

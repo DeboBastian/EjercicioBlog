@@ -18,15 +18,29 @@ export class FormularioComponent {
     
     
     this.formulario = new FormGroup({
+
       autor: new FormControl(null, [
         Validators.required
       ]),
-      titulo: new FormControl(null,
-        [Validators.minLength(4)]),
-      texto: new FormControl(null,
-        [Validators.maxLength(300)]),
-      imagen: new FormControl(null),
-      fecha: new FormControl(null),
+
+      titulo: new FormControl(null, [
+        Validators.minLength(4)
+      ]),
+      
+      texto: new FormControl(null, [
+        Validators.maxLength(300)
+      ]),
+      
+      imagen: new FormControl(null, [
+        Validators.required
+      ]),
+
+      fecha: new FormControl(null, [
+        Validators.required
+      ]),
+
+      //FALTA BUSCAR EXPRESION REGULAR PARA VALIDAR FECHA
+      
       categoria: new FormControl(null, [
         Validators.required
       ])
@@ -34,7 +48,8 @@ export class FormularioComponent {
     })
   }
 
-
+// CREAR UNA FUNCION PARA QUE SALTE UN ALERT CUANDO FALTAN DATOS QUE RELLENAR EN EL FORM 
+  
   crearPost() {
     this.postService.createPost(this.formulario.value);
     this.router.navigate(['/posts'])
