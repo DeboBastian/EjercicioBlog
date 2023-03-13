@@ -69,23 +69,27 @@ export class PostsService {
 
 
 
-  createPost(pPost: Post) {
-    this.arrPosts.push(pPost);
-  }
-
-
   getAll() {
+    if (localStorage.getItem('arrPosts')) {
+      this.arrPosts = JSON.parse(localStorage.getItem('arrPosts')!)
+    }
     return this.arrPosts;
   }
 
 
+  createPost(pPost: Post) {
+    this.arrPosts.push(pPost);
+    localStorage.setItem('arrPosts', JSON.stringify(this.arrPosts))
+  }
+
+  
   getByCategory(pCategoria: string) {
     return this.arrPosts.filter(post => post.categoria === pCategoria);
   }
 
-  delatePost(indice: number) {
-    this.arrPosts.splice(indice, 1)
-  }
+  // delatePost(indice: number) {
+  //   this.arrPosts.splice(indice, 1)
+  // }
 
 
 

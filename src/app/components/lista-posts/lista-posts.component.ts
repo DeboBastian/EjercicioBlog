@@ -17,12 +17,16 @@ export class ListaPostsComponent {
     private activatedRoute: ActivatedRoute
   ) {
     this.posts = [];
+    if (localStorage.getItem('arrPosts')) {
+      this.posts = JSON.parse(localStorage.getItem('arrPosts')!)
+    }
   }
 
   
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
-       this.posts = this.postService.getAll()
+      this.posts = this.postService.getAll()
+      localStorage.setItem('arrPosts', JSON.stringify(this.posts))
      })
    
   }
@@ -36,8 +40,8 @@ export class ListaPostsComponent {
   }
 
 
-  borrar(indice: number) {
-    this.postService.delatePost(indice)
-  }
+  // borrar(indice: number) {
+  //   this.postService.delatePost(indice)
+  // }
 }
 
