@@ -24,7 +24,7 @@ export class ListaPostsComponent {
 
   
   ngOnInit() {
-    this.activatedRoute.params.subscribe(params => {
+    this.activatedRoute.params.subscribe(() => {
       this.posts = this.postService.getAll()
       localStorage.setItem('arrPosts', JSON.stringify(this.posts))
      })
@@ -32,16 +32,12 @@ export class ListaPostsComponent {
   }
 
   onClick($event: any) {
-    if ($event.target.value === 'Todos') {
+    if ($event.target.value === 'todas') {
       this.posts = this.postService.getAll()
     } else {
       this.posts = this.postService.getByCategory($event.target.value)
     }
   }
 
-
-  // borrar(indice: number) {
-  //   this.postService.delatePost(indice)
-  // }
 }
 

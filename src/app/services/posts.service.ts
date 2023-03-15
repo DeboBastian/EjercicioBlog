@@ -9,7 +9,7 @@ export class PostsService {
 
   private arrPosts: Post[];
 
-  constructor() { 
+  constructor() {
     this.arrPosts = [
       {
         titulo: 'La India',
@@ -17,7 +17,7 @@ export class PostsService {
         autor: 'María Ruiz',
         imagen: 'https://elviajerofeliz.com/wp-content/uploads/2015/04/Taj-Mahal-8.jpg',
         fecha: '4/12/2019',
-        categoria: 'Viajes'
+        categoria: 'viajes'
       },
 
       {
@@ -26,7 +26,7 @@ export class PostsService {
         autor: 'Pedro Rodríguez',
         imagen: 'https://lamejorhamburguesa.com/html5Upload/server/php/files/medium/898f5ded-579b-4759-83df-e68675064615.jpeg',
         fecha: '10/03/2023',
-        categoria: 'Gastronomia'
+        categoria: 'gastronomia'
       },
 
       {
@@ -35,16 +35,16 @@ export class PostsService {
         autor: 'Ignacio López',
         imagen: 'https://edo-entradas-pro-files.s3.amazonaws.com/image_uploads/attachments/000/005/940/mammamia-400x504px.jpg',
         fecha: '27/02/2023',
-        categoria: 'Ocio'
+        categoria: 'ocio'
       },
 
-       {
+      {
         titulo: 'Egipto',
         texto: 'Adentrate en este impresionante y apasionante mundo de la antiguedad',
         autor: 'Eduardo Olivares',
-         imagen: 'https://cadenaser.com/resizer/hIo8_l1sKWpqCYGb29p2VJI-zH8=/768x576/filters:format(jpg):quality(70)/cloudfront-eu-central-1.images.arcpublishing.com/prisaradio/QJY44JN2EJDBJOZ47ZRP5TAGSY.jpg',
+        imagen: 'https://cadenaser.com/resizer/hIo8_l1sKWpqCYGb29p2VJI-zH8=/768x576/filters:format(jpg):quality(70)/cloudfront-eu-central-1.images.arcpublishing.com/prisaradio/QJY44JN2EJDBJOZ47ZRP5TAGSY.jpg',
         fecha: '6/10/2020',
-        categoria: 'Viajes'
+        categoria: 'viajes'
       },
 
       {
@@ -53,7 +53,7 @@ export class PostsService {
         autor: 'Helena Hurtado',
         imagen: 'https://www.5sentidosfranmartinez.com/images/8d0a3b0bdeec45cae9ab52f786c14f3a.jpg',
         fecha: '11/02/2022',
-        categoria: 'Gastronomia'
+        categoria: 'gastronomia'
       },
 
       {
@@ -62,7 +62,7 @@ export class PostsService {
         autor: 'Isidro Aguado',
         imagen: 'https://edo-entradas-pro-files.s3.amazonaws.com/image_uploads/attachments/000/004/300/chicos-del-coro-web_400x504.jpg',
         fecha: '01/10/2022',
-        categoria: 'Ocio'
+        categoria: 'ocio'
       }
     ]
   }
@@ -84,13 +84,8 @@ export class PostsService {
 
   
   getByCategory(pCategoria: string) {
+    
     return this.arrPosts.filter(post => post.categoria === pCategoria);
   }
-
-  // delatePost(indice: number) {
-  //   this.arrPosts.splice(indice, 1)
-  // }
-
-
-
+    
 }

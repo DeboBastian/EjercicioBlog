@@ -5,7 +5,7 @@
 }
 
 .container{
-    height: 850px;
+    height: 900px;
     padding-top: 50px;
 }
 
@@ -13,4 +13,27 @@
     font-weight: bolder;
     display: flex;
     margin: 80px auto;
+}
+
+.bi.bi-arrow-return-left{
+    size: 15px;
+    cursor: pointer;
+    color: rgb(55, 175, 250); 
+}
+
+.bi.bi-arrow-return-left:hover{
+    color: lightskyblue;
+    transition: 0.5s;
+}
+
+input.ng-valid.ng-touched{
+    border-color: lightgreen;
+}
+
+input.ng-invalid.ng-touched{
+    border-color: tomato;
+}
+
+.error{
+    color: tomato;
 }
