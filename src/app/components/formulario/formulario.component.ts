@@ -24,6 +24,7 @@ export class FormularioComponent {
       ]),
 
       titulo: new FormControl(null, [
+        Validators.required,
         Validators.minLength(4)
       ]),
       
@@ -32,27 +33,33 @@ export class FormularioComponent {
       ]),
       
       imagen: new FormControl(null, [
-        Validators.required
+        Validators.required,
+        Validators.pattern(/([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i)
       ]),
 
       fecha: new FormControl(null, [
         Validators.required
       ]),
-
-      //FALTA BUSCAR EXPRESION REGULAR PARA VALIDAR FECHA
       
-      categoria: new FormControl(null, [
+      categoria: new FormControl("", [
         Validators.required
       ])
 
     })
   }
 
-// CREAR UNA FUNCION PARA QUE SALTE UN ALERT CUANDO FALTAN DATOS QUE RELLENAR EN EL FORM 
-  
+
   crearPost() {
     this.postService.createPost(this.formulario.value);
     this.router.navigate(['/posts'])
   }
 
+
+  checkError(control: string, validator: string) {
+return this.formulario.get(control)?.hasError(validator) && this.formulario.get(control)?.touched
 }
+
+
+}
+
+//CREAR VALIDATOR PARA FECHA QUE SEA ENTRE 2000 Y ESTE AÑO

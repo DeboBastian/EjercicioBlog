@@ -5,49 +5,77 @@
 
                 <div class="mb-3 form-group">
                     <label class="form-label">Autor</label>
-                    <input type="text" class="form-control" formControlName="autor" name="autor">
+                    <input type="text" class="form-control" formControlName="autor">
+                    <p class="error" *ngIf="checkError('autor', 'required')">
+                        Este campo es requerido
+                    </p>
                 </div>
                 <div class="mb-3 form-group">
                     <label class="form-label">Título de la publicacicon</label>
-                    <input type="text" class="form-control" formControlName="titulo" name="titulo">
+                    <input type="text" class="form-control" formControlName="titulo">
+
+                    <p class="error" *ngIf="checkError('titulo', 'minLength')">
+                        Este campo debe tener como mínimo 4 caracteres
+                        <!-- //NO ME FUNCIONA ESTE MENSAJE. CORREGIR -->
+                    </p>
+                    <p class="error" *ngIf="checkError('titulo', 'required')">
+                        Este campo es requerido
+                    </p>
                 </div>
                 <div class="mb-3 form-group">
                     <label class="form-label">Descripcion</label>
-                    <input type="text" class="form-control" formControlName="texto" name="texto">
+                    <textarea rows="5" cols="30" class="form-control" formControlName="texto"
+                        placeholder="(Máximo 300 caracteres)"></textarea>
+                    <p class="error" *ngIf="checkError('texto', 'maxLength')">
+                        Este campo tiene una longitud máxima de 300 caracteres
+                    </p>
+
                 </div>
                 <div class="mb-3 form-group">
                     <label class="form-label">Imagen</label>
-                    <input type="text" class="form-control" formControlName="imagen" name="imagen"
+                    <input type="text" class="form-control" formControlName="imagen"
                         placeholder="Introduzca la URL de la imagen">
+                    <p class="error" *ngIf="checkError('imagen', 'pattern')">
+                        El campo img debe tener un formato válido (jpg, jpeg ,png ,gif)
+                    </p>
+                    <p class="error" *ngIf="checkError('imagen', 'required')">
+                        El campo img debe tener un formato válido (jpg, jpeg ,png ,gif)
+                    </p>
                 </div>
 
                 <div class="mb-3 form-group">
                     <label class="form-label">Fecha</label>
-                    <input type="text" class="form-control" formControlName="fecha" name="fecha"
-                        placeholder="DD / MM / YYYY">
+                    <input type="date" class="form-control" formControlName="fecha">
+                    <p class="error" *ngIf="checkError('fecha', 'required')">
+                        Este campo es requerido
+                    </p>
                 </div>
 
-                <!-- FALTA PONER BIEN EL CALENDARIO Y VER EL TEMA DE SELECCIONAR IMAGEN  -->
-
                 <div class="mb-3">
-                    <label class="form-label">Seleccione la categoria</label>
-                    <select class="form-select form-group" formControlName="categoria" name="categoria">
+
+                    <select class="form-select form-group" formControlName="categoria">
+                        <option value="" disabled>Seleccione la categoría</option>
                         <option value="viajes">Viajes</option>
                         <option value="gastronomia">Gastronomia</option>
                         <option value="ocio">Ocio</option>
                     </select>
+                    <p class="error" *ngIf="checkError('categoria', 'required')">
+                        Este campo es requerido
+                    </p>
                 </div>
 
-                <!-- //PREGUNTAR PORQUE EN EL SELECT NO SE PUEDE ESCRIBIR PLACEHOLDER CUANDO HAY formControlName
-                //Como insertar el calendario para la fecha -->
 
                 <input type="submit" value="PUBLICAR" class="btn btn-info" [disabled]="!formulario.valid">
 
             </form>
-            <div>
-                <button [routerLink]="['/posts']" class="btn btn-secondary">
-                    VER TODAS LAS PUBLICACIONES</button>
-            </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor"
+                class="bi bi-arrow-return-left" viewBox="0 0 16 16" routerLink="/posts">
+                <path fill-rule="evenodd"
+                    d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+            </svg>
+
+            <!-- //PREGUNTAR PORQUE NO FUNCIONAN ICONOS <i></i> -->
         </div>
     </div>
 </div>

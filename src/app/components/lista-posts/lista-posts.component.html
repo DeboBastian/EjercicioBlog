@@ -1,8 +1,8 @@
 <div class="botones">
-    <button type="button" class="btn btn-success" (click)="onClick($event)" value="Viajes">Viajes</button>
-    <button type="button" class="btn btn-warning" (click)="onClick($event)" value="Gastronomia">Gastronomia</button>
-    <button type="button" class="btn btn-info" (click)="onClick($event)" value="Ocio">Ocio</button>
-    <button type="button" class="btn btn-dark" (click)="onClick($event)" value="Todos">Todas las publicaciones</button>
+    <button type="button" class="btn btn-success" (click)="onClick($event)" value="viajes">Viajes</button>
+    <button type="button" class="btn btn-warning" (click)="onClick($event)" value="gastronomia">Gastronomia</button>
+    <button type="button" class="btn btn-info" (click)="onClick($event)" value="ocio">Ocio</button>
+    <button type="button" class="btn btn-dark" (click)="onClick($event)" value="todas">Todas las publicaciones</button>
 </div>
 
 
@@ -13,8 +13,6 @@
         <h5> {{post.autor}} </h5>
         <p class="fecha"> {{post.fecha}} </p>
         <img [src]="post.imagen" alt="">
-
-        <!-- <button type="button" class="btn btn-danger" (click)="borrar(indice)">Borrar</button> -->
 
     </div>
 </div>
