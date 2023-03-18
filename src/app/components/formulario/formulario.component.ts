@@ -69,10 +69,10 @@ export class FormularioComponent {
   modificaColor() {
     if (this.formulario.valid) {
       this.estilosBoton.color = 'black';
-      this.estilosBoton.backgroundColor = 'blue';
+      this.estilosBoton.backgroundColor = 'deepskyblue';
     } else {
       this.estilosBoton.color = 'white';
-      this.estilosBoton.backgroundColor = 'red';
+      this.estilosBoton.backgroundColor = 'gray';
     }
   }
 }

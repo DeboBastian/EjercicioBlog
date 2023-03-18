@@ -1,5 +1,6 @@
-  @import url(https://fonts.googleapis.com/css?family=Bona+Nova:regular,italic,700);
-  
+
+@import url(https://fonts.googleapis.com/css?family=Alfa+Slab+One:regular);
+
   body{
     background-image: url("https://static.vecteezy.com/system/resources/previews/006/262/493/non_2x/pink-bokeh-abstract-beautiful-double-light-blurred-glowing-pastel-gradient-background-concept-for-wedding-card-design-free-photo.jpg");
     background-repeat: no-repeat;
@@ -7,10 +8,11 @@
 }
 
 h1{
-    color: rgb(61, 123, 231);
+  color: rgb(137, 160, 237);
   padding: 40px;
-  font-family: Bona Nova;
+  font-family: Alfa Slab One;
   font-size: 300%;
   text-align: center;
-  text-shadow: 5px 5px 4px #558ABB;;
+  text-shadow: 8px 5px 5px #7937c9c7;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }

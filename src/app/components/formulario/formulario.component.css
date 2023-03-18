@@ -9,12 +9,6 @@
     padding-top: 50px;
 }
 
-.btn.btn-secondary{
-    font-weight: bolder;
-    display: flex;
-    margin: 80px auto;
-}
-
 .bi.bi-arrow-return-left{
     size: 15px;
     cursor: pointer;
@@ -26,11 +20,11 @@
     transition: 0.5s;
 }
 
-input.ng-valid.ng-touched{
+input.ng-valid.ng-touched, textarea.ng-valid.ng-touched, select.ng-valid.ng-touched{
     border-color: rgb(25, 166, 25);
 }
 
-input.ng-invalid.ng-touched{
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched, select.ng-invalid.ng-touched{
     border-color: tomato;
 }
 
