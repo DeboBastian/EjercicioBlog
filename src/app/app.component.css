@@ -1,5 +1,16 @@
-body{
+  @import url(https://fonts.googleapis.com/css?family=Bona+Nova:regular,italic,700);
+  
+  body{
     background-image: url("https://static.vecteezy.com/system/resources/previews/006/262/493/non_2x/pink-bokeh-abstract-beautiful-double-light-blurred-glowing-pastel-gradient-background-concept-for-wedding-card-design-free-photo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+h1{
+    color: rgb(61, 123, 231);
+  padding: 40px;
+  font-family: Bona Nova;
+  font-size: 300%;
+  text-align: center;
+  text-shadow: 5px 5px 4px #558ABB;;
 }

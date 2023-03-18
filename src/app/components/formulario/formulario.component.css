@@ -18,7 +18,7 @@
 .bi.bi-arrow-return-left{
     size: 15px;
     cursor: pointer;
-    color: rgb(55, 175, 250); 
+    color: rgb(43, 171, 251); 
 }
 
 .bi.bi-arrow-return-left:hover{
@@ -27,7 +27,7 @@
 }
 
 input.ng-valid.ng-touched{
-    border-color: lightgreen;
+    border-color: rgb(25, 166, 25);
 }
 
 input.ng-invalid.ng-touched{

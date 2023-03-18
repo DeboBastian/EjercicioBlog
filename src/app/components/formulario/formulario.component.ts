@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PostsService } from 'src/app/services/posts.service';
 import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'formulario',
@@ -11,6 +12,8 @@ import { Router } from '@angular/router';
 export class FormularioComponent {
 
   formulario: FormGroup;
+  // colorDisabled: string;
+  // backgroundDisabled: string;
 
   constructor(
     private postService: PostsService,
@@ -29,16 +32,13 @@ export class FormularioComponent {
       ]),
       
       texto: new FormControl(null, [
-        Validators.maxLength(300)
+        Validators.required,
+        Validators.maxLength(200)
       ]),
       
       imagen: new FormControl(null, [
         Validators.required,
         Validators.pattern(/([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i)
-      ]),
-
-      fecha: new FormControl(null, [
-        Validators.required
       ]),
       
       categoria: new FormControl("", [
@@ -46,6 +46,9 @@ export class FormularioComponent {
       ])
 
     })
+    
+    // this.colorDisabled = 'rgb(61, 123, 231)'
+    // this.backgroundDisabled = 'gray'
   }
 
 
@@ -59,7 +62,4 @@ export class FormularioComponent {
 return this.formulario.get(control)?.hasError(validator) && this.formulario.get(control)?.touched
 }
 
-
-}
-
-//CREAR VALIDATOR PARA FECHA QUE SEA ENTRE 2000 Y ESTE AÑO
+  }

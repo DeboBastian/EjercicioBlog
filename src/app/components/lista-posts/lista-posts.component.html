@@ -11,7 +11,7 @@
         <h3> {{post.titulo}}</h3>
         <p> {{post.texto}} </p>
         <h5> {{post.autor}} </h5>
-        <p class="fecha"> {{post.fecha}} </p>
+        <p class="fecha"> {{ post.fecha | date:'dd/MM/yyyy'}}</p>
         <img [src]="post.imagen" alt="">
 
     </div>
