@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PostsService } from 'src/app/services/posts.service';
 import { Router } from '@angular/router';
-import { DatePipe } from '@angular/common';
+
 
 @Component({
   selector: 'formulario',
@@ -12,8 +12,7 @@ import { DatePipe } from '@angular/common';
 export class FormularioComponent {
 
   formulario: FormGroup;
-  // colorDisabled: string;
-  // backgroundDisabled: string;
+  estilosBoton: any;
 
   constructor(
     private postService: PostsService,
@@ -47,8 +46,10 @@ export class FormularioComponent {
 
     })
     
-    // this.colorDisabled = 'rgb(61, 123, 231)'
-    // this.backgroundDisabled = 'gray'
+    this.estilosBoton = {
+      backgroundColor: '',
+      color: ''
+    }
   }
 
 
@@ -59,7 +60,19 @@ export class FormularioComponent {
 
 
   checkError(control: string, validator: string) {
-return this.formulario.get(control)?.hasError(validator) && this.formulario.get(control)?.touched
-}
-
+    this.modificaColor();
+    return this.formulario.get(control)?.hasError(validator) && this.formulario.get(control)?.touched
   }
+
+  
+  
+  modificaColor() {
+    if (this.formulario.valid) {
+      this.estilosBoton.color = 'black';
+      this.estilosBoton.backgroundColor = 'blue';
+    } else {
+      this.estilosBoton.color = 'white';
+      this.estilosBoton.backgroundColor = 'red';
+    }
+  }
+}

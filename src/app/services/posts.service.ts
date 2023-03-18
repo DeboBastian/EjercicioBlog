@@ -17,7 +17,7 @@ export class PostsService {
         texto: 'El choque cultural fue enorme, pero es un país que nunca olvidaré, lo recomiendo 100%!',
         autor: 'María Ruiz',
         imagen: 'https://elviajerofeliz.com/wp-content/uploads/2015/04/Taj-Mahal-8.jpg',
-        fecha: '04/12/2019',
+        fecha: '04/12/2021',
         categoria: 'viajes'
       },
 
@@ -44,7 +44,7 @@ export class PostsService {
         texto: 'Adentrate en este impresionante y apasionante mundo de la antiguedad',
         autor: 'Eduardo Olivares',
         imagen: 'https://cadenaser.com/resizer/hIo8_l1sKWpqCYGb29p2VJI-zH8=/768x576/filters:format(jpg):quality(70)/cloudfront-eu-central-1.images.arcpublishing.com/prisaradio/QJY44JN2EJDBJOZ47ZRP5TAGSY.jpg',
-        fecha: '6/19/2020',
+        fecha: '6/19/2021',
         categoria: 'viajes'
       },
 
